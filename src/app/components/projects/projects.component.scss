@@ -1,0 +1,594 @@
+#projects {
+  background-color: #f5f7fa;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(15, 164, 175, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(150, 55, 52, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .projects {
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .projects-header {
+    margin-bottom: 80px;
+    text-align: center;
+
+    h1 {
+      animation: slideInDown 0.8s ease-out;
+    }
+  }
+
+  /* Timeline Styles */
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #963734 0%, #0fa4af 100%);
+      border-radius: 2px;
+    }
+  }
+
+  .timeline-item {
+    display: flex;
+    margin-bottom: 60px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{($i - 1) * 0.2}s;
+      }
+    }
+
+    &:nth-child(odd) {
+      flex-direction: row;
+
+      .timeline-marker {
+        order: 1;
+      }
+
+      .timeline-content {
+        order: 2;
+        margin-left: 50px;
+      }
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .timeline-marker {
+        order: 2;
+      }
+
+      .timeline-content {
+        order: 1;
+        margin-right: 50px;
+      }
+    }
+  }
+
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .timeline-icon {
+      width: 80px;
+      height: 80px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(150, 55, 52, 0.2);
+      border: 4px solid #963734;
+      z-index: 10;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: scaleIn 0.6s ease-out backwards;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      }
+
+      &:hover {
+        transform: scale(1.15) rotate(360deg);
+        box-shadow: 0 15px 40px rgba(150, 55, 52, 0.35);
+      }
+    }
+
+    .timeline-line {
+      flex-grow: 1;
+      width: 4px;
+      background: linear-gradient(180deg, rgba(150, 55, 52, 0.3) 0%, transparent 100%);
+      margin-top: 20px;
+    }
+  }
+
+  .timeline-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .timeline-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(150, 55, 52, 0.1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #963734 0%, #0fa4af 100%);
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 45px rgba(150, 55, 52, 0.2);
+
+      .card-image {
+        transform: translateY(-10px);
+      }
+    }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+
+    .company-info {
+      flex: 1;
+
+      .company-name {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #963734;
+        margin: 0 0 5px 0;
+        transition: color 0.3s ease;
+      }
+
+      .period {
+        font-size: 1rem;
+        color: #666;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+
+    .card-link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      border-radius: 50%;
+      color: #963734;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      flex-shrink: 0;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        background: #963734;
+        color: white;
+        transform: translateY(-5px) rotate(45deg);
+      }
+    }
+  }
+
+  .card-body {
+    margin-bottom: 20px;
+
+    .role {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 5px 0;
+      transition: color 0.3s ease;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #0fa4af;
+      font-weight: 500;
+      margin: 0 0 20px 0;
+    }
+
+    .description {
+      margin-bottom: 20px;
+
+      .desc-item {
+        font-size: 1.1rem;
+        color: #555;
+        margin: 10px 0;
+        line-height: 1.6;
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          color: #963734;
+          font-weight: bold;
+        }
+
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #333;
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tech-badge {
+        display: inline-block;
+        padding: 6px 15px;
+        background: linear-gradient(135deg, #963734 0%, #c74c47 100%);
+        color: white;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        cursor: default;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(150, 55, 52, 0.3);
+        }
+      }
+    }
+  }
+
+  .card-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    transition: transform 0.4s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #projects {
+    .timeline {
+      &::before {
+        left: 25px;
+      }
+    }
+
+    .timeline-item {
+      flex-direction: column !important;
+
+      .timeline-marker {
+        width: auto;
+        margin-bottom: 30px;
+        justify-content: flex-start;
+
+        .timeline-icon {
+          width: 60px;
+          height: 60px;
+          border-width: 3px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .timeline-line {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 30px;
+          margin-top: 0;
+        }
+      }
+
+      .timeline-content {
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+      }
+    }
+
+    .timeline-card {
+      padding: 20px;
+
+      .card-header {
+        flex-direction: column;
+
+        .company-info {
+          margin-bottom: 15px;
+
+          .company-name {
+            font-size: 1.3rem;
+          }
+        }
+
+        .card-link {
+          align-self: flex-end;
+        }
+      }
+
+      .card-body {
+        .role {
+          font-size: 1.1rem;
+        }
+
+        .technologies {
+          .tech-badge {
+            padding: 5px 12px;
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .card-image {
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #projects {
+    .projects {
+      padding: 60px 20px;
+    }
+
+    .projects-header {
+      margin-bottom: 40px;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .timeline {
+      &::before {
+        left: 20px;
+        width: 3px;
+      }
+    }
+
+    .timeline-item {
+      margin-bottom: 40px;
+      flex-direction: column !important;
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+        flex-direction: column !important;
+
+        .timeline-marker {
+          order: 0 !important;
+          position: absolute;
+          left: 10px;
+          top: 0;
+        }
+
+        .timeline-content {
+          margin-left: 60px !important;
+          margin-right: 0 !important;
+          order: 0 !important;
+        }
+      }
+    }
+
+    .timeline-card {
+      padding: 15px;
+
+      .card-header {
+        flex-direction: column;
+        gap: 10px;
+
+        .company-info {
+          margin-bottom: 10px;
+
+          .company-name {
+            font-size: 1.1rem;
+          }
+
+          .company-role {
+            font-size: 0.9rem;
+          }
+        }
+
+        .card-link {
+          align-self: flex-start;
+        }
+      }
+
+      .card-body {
+        .role {
+          font-size: 1rem;
+          margin-top: 10px;
+        }
+
+        .description {
+          font-size: 0.9rem;
+        }
+
+        .technologies {
+          gap: 8px;
+          margin-top: 15px;
+
+          .tech-badge {
+            padding: 4px 10px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      .card-image {
+        display: none;
+      }
+    }
+
+    .timeline-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #projects {
+    background-image: none;
+
+    .projects {
+      padding: 40px 15px;
+    }
+
+    .projects-header {
+      margin-bottom: 30px;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .timeline {
+      padding: 0;
+
+      &::before {
+        left: 15px;
+        width: 2px;
+      }
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+
+      .timeline-marker {
+        left: 5px !important;
+      }
+
+      .timeline-content {
+        margin-left: 50px !important;
+      }
+    }
+
+    .timeline-card {
+      padding: 12px;
+      border-radius: 10px;
+
+      .card-header {
+        gap: 8px;
+
+        .company-info {
+          margin-bottom: 8px;
+
+          .company-name {
+            font-size: 1rem;
+          }
+
+          .company-role {
+            font-size: 0.85rem;
+          }
+        }
+
+        .card-link {
+          width: 30px;
+          height: 30px;
+          font-size: 1rem;
+        }
+      }
+
+      .card-body {
+        .role {
+          font-size: 0.95rem;
+        }
+
+        .description {
+          font-size: 0.85rem;
+          line-height: 1.5;
+        }
+
+        .technologies {
+          flex-wrap: wrap;
+          gap: 6px;
+
+          .tech-badge {
+            padding: 3px 8px;
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .timeline-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<section id="hero">
+  <div class="animated-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="floating-element element-1"></div>
+    <div class="floating-element element-2"></div>
+    <div class="floating-element element-3"></div>
+    
+    <!-- Rain animation -->
+    <div class="rain-drop" *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]"></div>
+    
+  </div>
+  <div class="hero container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hello,<span></span></h1>
+        <h1>I am<span></span></h1>
+        <h1>Shubham<span></span></h1>
+        <h2 class="tagline">Full Stack Developer | Java Specialist | Fintech/Quant Enthusiast</h2>
+        <a href="#projects" class="cta-button">Explore My Work</a>
+      </div>
+      <div class="hero-image">
+        <div class="profile-circle">
+          <img [src]="profileImage" alt="Shubham Thombare">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

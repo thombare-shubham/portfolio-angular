@@ -1,0 +1,20 @@
+<section id="awards">
+  <div class="container">
+    <h2 class="section-title">Awards & <span>Achievements</span></h2>
+    
+    <div class="awards-carousel">
+      <div class="carousel-wrapper" #carouselWrapper>
+        <div class="awards-track" #awardsTrack [class.animate]="shouldAnimate">
+          <div *ngFor="let award of awards" class="award-card">
+            <div class="award-content">
+              <h3 class="award-title">{{ award.title }}</h3>
+              <p class="award-issuer">{{ award.issuer }}</p>
+              <p class="award-date">{{ award.date }}</p>
+              <p class="award-description">{{ award.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

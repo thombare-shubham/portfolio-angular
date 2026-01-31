@@ -1,0 +1,56 @@
+<section id="projects">
+  <div class="projects container">
+    <div class="projects-header">
+      <h1 class="section-title">Professional <span>Experience</span></h1>
+    </div>
+
+    <!-- Timeline View -->
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let project of projects; let i = index">
+        <!-- Timeline Dot -->
+        <div class="timeline-marker">
+          <div class="timeline-icon">
+            <img [src]="project.icon" [alt]="project.company">
+          </div>
+          <div class="timeline-line" *ngIf="i < projects.length - 1"></div>
+        </div>
+
+        <!-- Timeline Content -->
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="company-info">
+                <h3 class="company-name">{{ project.company }}</h3>
+                <p class="period">{{ project.period }}</p>
+              </div>
+              <a *ngIf="project.link" class="card-link" [href]="project.link" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            <div class="card-body">
+              <h4 class="role">{{ project.role }}</h4>
+              <p class="subtitle">{{ project.subtitle }}</p>
+
+              <div class="description">
+                <p *ngFor="let desc of project.description" class="desc-item">{{ desc }}</p>
+              </div>
+
+              <div class="technologies">
+                <span *ngFor="let tech of project.technologies" class="tech-badge">{{ tech }}</span>
+              </div>
+            </div>
+
+            <!-- <div class="card-image">
+              <img [src]="project.image" [alt]="project.company">
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

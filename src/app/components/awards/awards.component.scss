@@ -1,0 +1,137 @@
+#awards {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 15px 20px 10px;
+
+  .container {
+    min-height: 35vh !important;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #333;
+
+    span {
+      color: #963734;
+    }
+  }
+
+  .awards-carousel {
+    position: relative;
+    overflow: hidden;
+
+    .carousel-wrapper {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 3px 0;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #e0e0e0;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #963734;
+        border-radius: 10px;
+
+        &:hover {
+          background: #7a2b28;
+        }
+      }
+    }
+
+    .awards-track {
+      display: flex;
+      gap: 25px;
+      padding: 3px 0;
+
+      &.animate {
+        animation: scrollToEnd 0.8s ease-in-out forwards;
+
+        @keyframes scrollToEnd {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-100% - 25px));
+          }
+        }
+
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+
+  .award-card {
+    flex: 0 0 calc(33.333% - 17px);
+    min-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #963734;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(150, 55, 52, 0.15);
+    }
+  }
+
+  .award-content {
+    .award-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #963734;
+    }
+
+    .award-issuer {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .award-date {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .award-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #awards {
+    padding: 12px 15px 8px;
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .award-card {
+      flex: 0 0 calc(100% - 25px);
+      min-width: 280px;
+    }
+  }
+}
