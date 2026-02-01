@@ -122,16 +122,46 @@
 
 @media (max-width: 768px) {
   #awards {
-    padding: 12px 15px 8px;
+    padding: 40px 20px;
+
+    .container {
+      min-height: auto !important;
+    }
 
     .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .awards-carousel {
+      .carousel-wrapper {
+        overflow-x: visible;
+      }
+
+      .awards-track {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
     }
 
     .award-card {
-      flex: 0 0 calc(100% - 25px);
-      min-width: 280px;
+      flex: none;
+      width: 100%;
+      max-width: 340px;
+      padding: 25px;
+      min-height: auto;
+      height: auto;
+    }
+
+    .award-content {
+      .award-title {
+        font-size: 1.2rem;
+      }
+
+      .award-description {
+        font-size: 0.9rem;
+      }
     }
   }
 }

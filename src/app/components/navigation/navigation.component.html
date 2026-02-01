@@ -1,3 +1,8 @@
-<div class="sidebar">
-  <a *ngFor="let link of navLinks" [href]="link.href">{{ link.name }}</a>
+<div class="sidebar" [class.open]="menuOpen">
+  <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <a *ngFor="let link of navLinks" [href]="link.href" (click)="closeMenu()" class="nav-link">{{ link.name }}</a>
 </div>

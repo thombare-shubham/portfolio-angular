@@ -233,11 +233,13 @@
     .contact-items {
       gap: 20px;
       padding: 0 10px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contact-card {
       width: 100%;
-      max-width: 280px;
+      max-width: 320px;
       padding: 25px;
     }
 
@@ -284,11 +286,13 @@
     .contact-items {
       gap: 20px;
       padding: 0 15px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contact-card {
       width: 100%;
-      max-width: 250px;
+      max-width: 320px;
       padding: 25px;
 
       .icon-wrapper {
@@ -378,123 +382,6 @@
   }
   50% {
     transform: translate(-50%, -60%) scale(1.15) rotate(360deg);
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  #contact {
-    .contact-items {
-      gap: 50px;
-    }
-
-    .contact-link {
-      font-size: 1.1rem;
-      padding: 15px 25px;
-
-      svg {
-        width: 36px;
-        height: 36px;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #contact {
-    .contact-items {
-      gap: 15px;
-      padding: 0 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .contact-link {
-      font-size: 0.9rem;
-      padding: 10px 15px;
-
-      svg {
-        width: 28px;
-        height: 28px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #contact {
-    .contact {
-      padding: 60px 20px;
-    }
-
-    .contact-header {
-      margin-bottom: 40px;
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .contact-subtitle {
-        font-size: 1rem;
-      }
-    }
-
-    .contact-items {
-      gap: 20px;
-      padding: 0 15px;
-      flex-wrap: wrap;
-    }
-
-    .contact-link {
-      font-size: 1rem;
-      padding: 12px 20px;
-
-      svg {
-        width: 32px;
-        height: 32px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #contact {
-    .contact {
-      padding: 40px 15px;
-    }
-
-    .contact-header {
-      margin-bottom: 30px;
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .contact-subtitle {
-        font-size: 0.9rem;
-      }
-    }
-
-    .contact-items {
-      gap: 12px;
-      padding: 0 10px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .contact-link {
-      font-size: 0.85rem;
-      padding: 8px 12px;
-
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .contact-text {
-        display: none;
-      }
-    }
   }
 }
 

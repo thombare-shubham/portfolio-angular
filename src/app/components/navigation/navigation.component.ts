@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
+  menuOpen = false;
+
   navLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
@@ -16,4 +18,12 @@ export class NavigationComponent {
     { name: 'Awards', href: '#awards' },
     { name: 'Contact', href: '#contact' }
   ];
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }
