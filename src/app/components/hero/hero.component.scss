@@ -632,3 +632,94 @@
     font-size: 7rem;
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  #hero {
+    padding-top: 7rem;
+
+    .hero {
+      padding: 0 2rem;
+    }
+
+    .hero-content {
+      gap: 4rem;
+    }
+
+    .hero-image {
+      flex: 0 0 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #hero {
+    min-height: 100dvh;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+
+    .hero {
+      padding: 0 1.6rem;
+    }
+
+    .hero-content {
+      flex-direction: column-reverse;
+      gap: 2.4rem;
+      text-align: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      width: auto;
+      font-size: 2.8rem !important;
+      margin: 0.6rem 0 !important;
+    }
+
+    .tagline {
+      max-width: 58ch;
+      margin-top: 1.6rem;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      padding: 0 0.5rem;
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      padding: 1.2rem 2.4rem;
+      font-size: 1.4rem;
+    }
+
+    .hero-image {
+      flex: 0 0 auto;
+
+      .profile-circle {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #hero {
+    padding-top: 7rem;
+
+    h1 {
+      font-size: 2.2rem !important;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      line-height: 1.45;
+    }
+
+    .hero-image .profile-circle {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}

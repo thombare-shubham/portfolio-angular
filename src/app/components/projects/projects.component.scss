@@ -592,3 +592,66 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  #projects {
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.2rem;
+    }
+
+    .timeline-marker {
+      position: absolute !important;
+      left: 0 !important;
+      top: 0;
+      width: 44px !important;
+      margin-bottom: 0 !important;
+
+      .timeline-icon {
+        width: 44px !important;
+        height: 44px !important;
+
+        img {
+          width: 28px !important;
+          height: 28px !important;
+        }
+      }
+
+      .timeline-line {
+        display: none;
+      }
+    }
+
+    .timeline-content {
+      width: 100%;
+      margin-left: 5.8rem !important;
+      margin-right: 0 !important;
+    }
+
+    .timeline-card {
+      width: 100%;
+      padding: 1.4rem;
+    }
+
+    .card-body .description .desc-item {
+      font-size: 1rem;
+      word-break: break-word;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #projects {
+    .timeline-content {
+      margin-left: 5rem !important;
+    }
+
+    .timeline-card {
+      padding: 1.2rem;
+    }
+
+    .card-header .company-info .company-name {
+      font-size: 1rem;
+    }
+  }
+}
