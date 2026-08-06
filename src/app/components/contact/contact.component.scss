@@ -70,6 +70,10 @@
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(150, 55, 52, 0.1);
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
 
     &::before {
       content: '';
@@ -81,9 +85,12 @@
       background: linear-gradient(90deg, #963734 0%, #0fa4af 100%);
     }
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       transform: translateY(-15px) scale(1.02);
       box-shadow: 0 15px 40px rgba(150, 55, 52, 0.2);
+      border-color: #963734;
+      outline: none;
     }
   }
 
@@ -177,18 +184,24 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1.15) rotate(360deg);
   }
+
   50% {
     transform: translate(-50%, -60%) scale(1.15) rotate(360deg);
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(150, 55, 52, 0.7);
   }
+
   50% {
     box-shadow: 0 0 0 10px rgba(150, 55, 52, 0);
   }
@@ -377,11 +390,13 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1.15) rotate(360deg);
   }
+
   50% {
     transform: translate(-50%, -60%) scale(1.15) rotate(360deg);
   }
 }
-

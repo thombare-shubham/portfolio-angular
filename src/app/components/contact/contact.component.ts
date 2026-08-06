@@ -13,10 +13,12 @@ export class ContactComponent {
     {
       title: 'Phone',
       value: '+91 9921471375',
+      link: 'tel:+919921471375'
     },
     {
       title: 'Email',
       value: 'shubhamrthombare2@gmail.com',
+      link: 'mailto:shubhamrthombare2@gmail.com'
     },
     {
       title: 'LinkedIn',
